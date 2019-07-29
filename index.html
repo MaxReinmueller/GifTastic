@@ -6,34 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link type="text/css" href="assets/style/style.css">
+
     <title>Giftastic</title>
 </head>
 
 <body>
     <div class="container">
 
-        <div class="buttons">
+        <div id="topicButtons">
 
         </div>
+        <br>
 
-        <form class="addAnimal">
-            <label for="add">Add an Animal</label><br>
-            <input type="text" name="add"><br>
-            <input type="submit" name="add" id="add">
-        </form>
+        <!-- <label for="add">Add an Animal</label><br> -->
+        <input id="serchText" type="text" placeholder="Search.."><br>
+        <button id="addGifs" type="submit">Submit</button>
 
-        <div class="gifImages">
 
-        </div>
+        <div id="gifImages"></div>
 
-<!-- link to jquery -->
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+        <!-- link to jquery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-<!-- link to js -->
-<script type="text/javascript" src="assets/logic.js"></script>
+        <!-- link to js -->
+        <script type="text/javascript" src="assets/logic.js"></script>
     </div>
 </body>
 

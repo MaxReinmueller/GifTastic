@@ -1,0 +1,7 @@
+maven {
+    url "http://giphy.bintray.com/giphy-sdk"
+}
+
+implementation 'com.giphy.sdk:ui:1.0.1'
+
+GiphyCoreUI.configure(this, 24KQv6B23tfAoFCOnUdjAn1ZKbOjZWr2)

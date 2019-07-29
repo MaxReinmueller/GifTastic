@@ -1,22 +1,29 @@
 // key words that generate the gifs
-var starterGifs = ['dog', 'cat', 'horse'];
-var userPick = [];
+var gifsButtons = ['dog', 'cat', 'horse'];
+var userPick = ('');
 // loop that creates buttons
 $(document).ready(function() {
-    for (i = 0; i < starterGifs.length; i++) {
-        console.log(starterGifs[i])
+    for (i = 0; i < gifsButtons.length; i++) {
         var topicBtn = $("<button>");
         topicBtn.addClass("gifButton");
-        topicBtn.attr("data-letter", starterGifs[i]);
-        topicBtn.text(starterGifs[i]);
-        $("#topicButtons").append(topicBtn);
+        topicBtn.attr("id", gifsButtons[i]);
+        topicBtn.val(gifsButtons[i])
+        topicBtn.text(gifsButtons[i]);
+        $(".topicButtons").append(topicBtn);
     }
-});
+
+    // retrives value from button when clicked
+$(".gifButton").on("click", function() {
+    var clicked = $(this).val();
+    userPick = clicked;
+    // userPick.push(clicked);
+    console.log(userPick);
+    getGiffs();
+  });
 
 
 // links Giphy
 function getGiffs(){
-    
 var xhr = $.get("https://api.giphy.com/v1/gifs/search?q= "+ userPick + "&api_key=24KQv6B23tfAoFCOnUdjAn1ZKbOjZWr2&limit=10");
 xhr.done(function (res) {
     console.log("success got data", res);
@@ -29,12 +36,18 @@ xhr.done(function (res) {
 });
 }
 
+
+// adds new buttons to array
 $("#addGifs").on("click", function() {
     var newButton = $("<button>").text($("#serchText").val());
-        newButton.addClass("");
-        $("#topicButtons").append(newButton);
-        starterGifs.push(newButton);
-        userPick.push(newButton);
-        getGiffs()
-        console.log(userPick);
+        newButton.addClass("gifButton");
+        newButton.attr("id", newButton.text());
+        newButton.val(newButton.text());
+        $(".topicButtons").append(newButton);
+        gifsButtons.push(newButton);
+        userPick = newButton.val();
+       console.log(userPick);
+       getGiffs();
   });
+});
+

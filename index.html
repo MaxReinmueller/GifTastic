@@ -5,25 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" href="assets/style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 
     <title>Giftastic</title>
 </head>
 
 <body>
     <div class="container">
-<h1>Animal gifs!</h1>
-<p>Type in the name of your favorite animal to get 10 gifs of that animal.</p>
-<hr>
+        <!-- header -->
+        <hr>
+        <h1>Animal gifs!</h1>
+        <p>Type in the name of your favorite animal to get 10 gifs of that animal.</p>
+        <hr>
         <div class="topicButtons"></div>
         <br>
 
-        <!-- <label for="add">Add an Animal</label><br> -->
-        <input id="searchText" type="text" placeholder="Search.."><br>
-        <button id="addGifs" type="submit">Submit</button>
+        <!-- displays gifs -->
+        <div class="row">
+            <div class="col-8">
+                <div id="gifImages"></div>
+            </div>
 
+            <!-- serch for animals -->
+            <div class="col-4">
 
-        <div id="gifImages"></div>
+                <div class="input-group mb-3">
+                    <input type="text" id="searchText" class="form-control" placeholder="Animals"
+                        aria-label="Animals" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button  class="addGifs btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
         <!-- link to jquery -->
         <script src="https://code.jquery.com/jquery-3.4.1.js"

@@ -1,12 +1,12 @@
 // global variables
-var gifsButtons = ['dog', 'cat', 'horse'];
+var gifsButtons = ['dog', 'cat', 'horse', 'hippo', 'rhino', 'fish', 'chicken'];
 var userPick = ('');
 
 // loop that creates buttons
 $(document).ready(function () {
     for (i = 0; i < gifsButtons.length; i++) {
         var topicBtn = $("<button>");
-        topicBtn.addClass("gifButton");
+        topicBtn.addClass("gifButton btn btn-primary btn-sm");
         topicBtn.attr("id", gifsButtons[i]);
         topicBtn.val(gifsButtons[i])
         topicBtn.text(gifsButtons[i]);
@@ -23,11 +23,18 @@ $(document).ready(function () {
             $("#gifImages").empty();
 
             for (i in giffs) {
-                var still = ("<img src='" + giffs[i].images.original_still.url + "'class='gifTile' style='height:250px; width:250px;'/>")
-                var animated = ("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:250px; width:250px;'/>")
-                var rated = giffs[i].rating;
-                var pOne = ("<p>" + "rating: " + rated + "</p>");
-                $("#gifImages").append(pOne).append(still);
+                var rating = (giffs[i].rating);
+                rated = ("Rated: " +rating);
+
+                var giffy = $("<img height='200px' width='200px'>")
+                giffy.attr('src', giffs[i].images.original_still.url, 'datastate', 'still');
+                giffy.addClass("gifTile");
+
+                var animated = ("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:200px; width:200px;'/>")
+                var still = ("<img src='" + giffs[i].images.original_still.url + "'class='gifTile' style='height:200px; width:200px;'/>")
+                
+                $("#gifImages").append(giffy).append(rated);
+
             }            
         });
     }
@@ -42,9 +49,9 @@ $(document).ready(function () {
 
 
     // adds new buttons to array
-    $("#addGifs").on("click", function () {
+    $(".addGifs").on("click", function () {
         var newButton = $("<button>").text($("#searchText").val());
-        newButton.addClass("gifButton");
+        newButton.addClass("gifButton btn btn-primary btn-sm");
         newButton.attr("id", newButton.text());
         newButton.val(newButton.text());
         $(".topicButtons").append(newButton);

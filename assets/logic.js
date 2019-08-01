@@ -24,16 +24,21 @@ $(document).ready(function () {
 
             for (i in giffs) {
                 var rating = (giffs[i].rating);
-                rated = ("Rated: " +rating);
+                R = rating.toUpperCase()
+                rated = ("Rated: " + R);
 
                 var giffy = $("<img height='200px' width='200px'>")
+                giffy.attr('src', giffs[i].images.original.url, 'datastate', 'animated')
                 giffy.attr('src', giffs[i].images.original_still.url, 'datastate', 'still');
                 giffy.addClass("gifTile");
 
                 var animated = ("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:200px; width:200px;'/>")
                 var still = ("<img src='" + giffs[i].images.original_still.url + "'class='gifTile' style='height:200px; width:200px;'/>")
                 
-                $("#gifImages").append(giffy).append(rated);
+                var theGiff = $('<div class="gifCard">');
+                theGiff.append(rated).append(giffy);
+
+                $("#gifImages").append(theGiff);
 
             }            
         });

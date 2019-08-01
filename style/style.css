@@ -5,3 +5,9 @@
 .theRating{
     width: 200px;
 }
+
+.gifCard {
+    width: 200px;
+    margin: 15px;
+    float: left;
+}

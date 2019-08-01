@@ -17,21 +17,17 @@ $(document).ready(function () {
     function getGiffs() {
         var xhr = $.get("https://api.giphy.com/v1/gifs/search?q= " + userPick + "&api_key=24KQv6B23tfAoFCOnUdjAn1ZKbOjZWr2&limit=10&rating=g");
         xhr.done(function (res) {
-            console.log("success got data", res);
-
+            console.log(res)
             var giffs = res.data
 
             $("#gifImages").empty();
 
             for (i in giffs) {
-                var still = ("<img src='" + giffs[i].images.original_still.url + "'class='gifTile' style='height:350px; width:350px;'/>")
-                var animated = ("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:350px; width:350px;'/>")
+                var still = ("<img src='" + giffs[i].images.original_still.url + "'class='gifTile' style='height:250px; width:250px;'/>")
+                var animated = ("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:250px; width:250px;'/>")
                 var rated = giffs[i].rating;
-                var pOne = $("<p>").text("Rating: " + rated);
-                $("still").attr('dataState', "makeStill");
-                $("animated").attr('dataState', "animate");
+                var pOne = ("<p>" + "rating: " + rated + "</p>");
                 $("#gifImages").append(pOne).append(still);
-                
             }            
         });
     }
@@ -61,9 +57,14 @@ $(document).ready(function () {
 
     // animates giffs on click
     $(document).on("click", ".gifTile", function () {
+        console.log($(this).attr('src'))
+        // var state = 
+
+    //    $(this).attr('src', 'res.data.images.original.url')
         
+
         // var state = $(this).attr('dataState')
-        // console.log($('state'));
+        
         // if (state = 'still') {
         //     $(this).attr remove still
         //     add animate

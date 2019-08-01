@@ -24,24 +24,15 @@ $(document).ready(function () {
             $("#gifImages").empty();
 
             for (i in giffs) {
-                var image = ("<img src='" + giffs[i].images.original_still.url + "'class='gifTile' style='height:350px; width:350px;'/>")
-                var still = giffs[i].images.original_still.url;
-                var animated = giffs[i].images.original.url;
+                var still = ("<img src='" + giffs[i].images.original_still.url + "'class='gifTile' style='height:350px; width:350px;'/>")
+                var animated = ("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:350px; width:350px;'/>")
                 var rated = giffs[i].rating;
                 var pOne = $("<p>").text("Rating: " + rated);
-                $("#gifImages").append(image).append(pOne)
-
-                console.log(animated);
-            }
-
-            // animates giffs on click
-            $(document).on("click", ".gifTile", function () {
-                console.log($(this).src);
-                // $(this).attr(animated: true)
-                // $(this).empty("<img>");
-                // console.log($(this));
-                // $(this).append("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:350px; width:350px;'/>");
-            });
+                $("still").attr('dataState', "makeStill");
+                $("animated").attr('dataState', "animate");
+                $("#gifImages").append(pOne).append(still);
+                
+            }            
         });
     }
 
@@ -66,17 +57,18 @@ $(document).ready(function () {
         console.log(userPick);
         getGiffs();
     });
-
-    // $().on("click", function () {
-
-
-    //     var state = $(this).attr('dataState')
-    //     if (state = 'still') {
-    //         $(this).attr remove still
-    //         add animate
-    //     } else {
-    //         remove animate
-    //         add still
-    //     }
-    // });
 });
+
+    // animates giffs on click
+    $(document).on("click", ".gifTile", function () {
+        
+        // var state = $(this).attr('dataState')
+        // console.log($('state'));
+        // if (state = 'still') {
+        //     $(this).attr remove still
+        //     add animate
+        // } else {
+        //     remove animate
+        //     add still
+        // }
+    });

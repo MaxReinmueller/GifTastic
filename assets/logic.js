@@ -27,9 +27,9 @@ $(document).ready(function () {
                 R = rating.toUpperCase()
                 rated = ("Rated: " + R);
 
-                var giffy = $("<img height='200px' width='200px'>")
-                giffy.attr('src', giffs[i].images.original.url, 'datastate', 'animated')
-                giffy.attr('src', giffs[i].images.original_still.url, 'datastate', 'still');
+                var giffy = $("<img src='" + giffs[i].images.original.url + "' height='200px' width='200px'>")
+                giffy.attr('data-still', giffs[i].images.original_still.url);
+                giffy.attr('data-animated', giffs[i].images.original.url).attr('data-state', 'animated');
                 giffy.addClass("gifTile");
 
                 var animated = ("<img src='" + giffs[i].images.original.url + "'class='gifTile' style='height:200px; width:200px;'/>")
@@ -53,7 +53,7 @@ $(document).ready(function () {
     });
 
 
-    // adds new buttons to array
+    // adds new buttons to array    
     $(".addGifs").on("click", function () {
         var newButton = $("<button>").text($("#searchText").val());
         newButton.addClass("gifButton btn btn-primary btn-sm");
@@ -70,6 +70,10 @@ $(document).ready(function () {
     // animates giffs on click
     $(document).on("click", ".gifTile", function () {
         console.log($(this).attr('src'))
+        
+// when clicked check for data state, if anim. do this of not...
+// replace src of image file with value of data animated or still depending on boolean
+        
         // var state = 
 
     //    $(this).attr('src', 'res.data.images.original.url')

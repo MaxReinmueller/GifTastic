@@ -1,5 +1,5 @@
 // global variables
-var gifsButtons = ['dog', 'cat', 'horse', 'hippo', 'rhino', 'fish', 'chicken'];
+var gifsButtons = ['dog', 'cat', 'sponge bob', 'invader zim', 'rhino', 'rockstar', 'chicken'];
 var userPick = ('');
 
 // loop that creates buttons

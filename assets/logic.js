@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     // links Giphy
     function getGiffs() {
-        var xhr = $.get("https://api.giphy.com/v1/gifs/search?q= " + userPick + "&api_key=24KQv6B23tfAoFCOnUdjAn1ZKbOjZWr2&limit=10&rating=g");
+        var xhr = $.get("https://api.giphy.com/v1/gifs/search?q= " + userPick + "&api_key=24KQv6B23tfAoFCOnUdjAn1ZKbOjZWr2&limit=12&rating=g");
         xhr.done(function (res) {
             console.log(res)
             var giffs = res.data

@@ -1,11 +1,11 @@
 # Gif Search
 
 ## Overview
+Search for gifs by typing in keywords in to the search bar.
+
+Only "G" rated gifs will display 
 
 Link to deployed version - https://maxreinmueller.github.io/GifTastic/.
-
-## Instructions
-  1. Using the search bar type in the type of gifs you would like to recieve. 
     
 ### Technologies used
 * Bootstrap

@@ -15,31 +15,36 @@
 <body>
     <div class="container">
         <!-- header -->
-        <hr>
-        <h1>Awesome Giphy Gifs!</h1>
-        <p>Type in the name of animal, show, or anything you want and get 12 gifs!</p>
-        <hr>
-        <div class="topicButtons"></div>
-        <br>
+        <div class="row">
+            <hr>
+            <h1>Awesome Giphy Gifs!</h1>
+            <p>Type in the name of animal, show, or anything you want and get 12 gifs!</p>
+            <hr>
+            <div class="topicButtons"></div>
+            <br>
+        </div>
+
+        <!-- search -->
+        <div class="row">
+            <div class="input-group mb-3">
+                <input type="text" id="searchText" class="form-control" placeholder="Awesomeness Starts Here"
+                    aria-label="Animals" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="addGifs btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+                </div>
+            </div>
+        </div>
+        </div>
 
         <!-- displays gifs -->
         <div class="row">
-            <div class="col-8">
+            <div>
                 <div id="gifImages">
                     <p id="gifRating"></p>
                 </div>
             </div>
 
-            <!-- search for animals -->
-            <div class="col-4">
-                <div class="input-group mb-3">
-                    <input type="text" id="searchText" class="form-control" placeholder="Awesomeness Starts Here"
-                        aria-label="Animals" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button  class="addGifs btn btn-outline-primary" type="button" id="button-addon2">Search</button>
-                    </div>
-                </div>
-            </div>
+
 
         </div>
 
